@@ -1,0 +1,22 @@
+{
+  "name": "th/filedownloader",
+  "type": "library",
+  "version": "1.0.1",
+  "description": "Small library to help download files",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Thomas Marinissen",
+      "email": "tmarinissen@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Th\\": "src"
+    }
+  }
+}
