@@ -206,7 +206,7 @@ class FileDownloader {
      * @param   string                                 The name for the download file
      * @return  \Th\FileDownloader                     The instance of this to make chaining possible
      */
-    private function setName($name) {
+    public function setName($name) {
         // get the path info of the given name
         $pathinfo = pathinfo($name);
         
