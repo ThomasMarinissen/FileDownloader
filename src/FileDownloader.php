@@ -302,7 +302,7 @@ class FileDownloader {
      * @throws \Th\FileDownloader\Exceptions\DownloadException      Thrown if the extension of the download file is not allowed
      */
     public function validateExtension() {
-        // if the allowed extension valie is null, all file extensions are allowed
+        // if the allowed extension value is null, all file extensions are allowed
         if (is_null($this->allowedExtensions())) {
             return true;
         }
@@ -345,26 +345,29 @@ class FileDownloader {
         // everything ok
         return true;
     }
-    
+
     /**
      * Set the url, original name and original extension based on the download url
-     * 
+     *
      * @param   string                        The download file url
      * @return  \Th\FileDownloader            The instance of this, to make chaining possible
      */
     private function parse($url) {
         // set the download file url
         $this->url = $url;
-        
+
+        // parse the url, to remove possible query parameters, otherwise it is not possible to fetch the extension
+        $urlParsed = parse_url($url);
+
         // get the path info of the given name
-        $pathinfo = pathinfo($url);
-        
+        $pathinfo = pathinfo($urlParsed['path']);
+
         // get the base file name
         $this->nameOriginal = $pathinfo['filename'];
-        
+
         // set the file name
         $this->extension = $pathinfo['extension'];
-        
+
         // done, return the instance of this, to make chaining possible
         return $this;
     }
