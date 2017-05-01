@@ -31,56 +31,56 @@ class FileDownloader {
      * 
      * @var string
      */
-    private $downloadDir = "/tmp/";
+    protected $downloadDir = "/tmp/";
     
     /**
      * The source url of the file to download
      * 
      * @var string
      */
-    private $url;
+    protected $url;
     
     /**
      * The original name of the file
      * 
      * @var string
      */
-    private $nameOriginal;
+    protected $nameOriginal;
 
     /**
      * Original name of the downloaded file.
      * 
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * The MIME type of the downloaded file
      * 
      * @var string|null
      */
-    private $type = null;
+    protected $type = null;
     
     /**
      * The download file extension
      * 
      * @var string|null
      */
-    private $extension = null;
+    protected $extension = null;
 
     /**
      * Array of the allowed file types for an download.
      * 
      * @var array|null
      */
-    private $allowedTypes = null;
+    protected $allowedTypes = null;
 
     /**
      * Array class attribute that defines what extensions are allowed.
      * 
      * @var array|null
      */
-    private $allowedExtensions = null;
+    protected $allowedExtensions = null;
 
     /**
      * Constructor method.
@@ -352,7 +352,7 @@ class FileDownloader {
      * @param   string                        The download file url
      * @return  \Th\FileDownloader            The instance of this, to make chaining possible
      */
-    private function parse($url) {
+    protected function parse($url) {
         // set the download file url
         $this->url = $url;
 
@@ -377,7 +377,7 @@ class FileDownloader {
      * 
      * @throws \Th\FileDownloader\Exceptions\DownloadException          Throw an error if it is not possible to download the file
      */
-    private function downloadFile() {
+    protected function downloadFile() {
         // if the file exists already, return out, file already was downloaded
         if (file_exists($this->downloadFilePath())) {
             return;

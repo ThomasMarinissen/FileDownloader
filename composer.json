@@ -1,7 +1,7 @@
 {
   "name": "th/filedownloader",
   "type": "library",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Small library to help download files",
   "license": "Apache-2.0",
   "authors": [
